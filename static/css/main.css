@@ -1,0 +1,137 @@
+/* CSS styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root
+{
+    --clr: #222327;
+    --clr-text: rgb(255, 255, 255);
+    --clr-indicator: #fddd29;
+}
+html
+{
+    min-height: 100%;
+    position: relative;
+}
+
+body
+{
+    display: flex;
+    min-height: 100vh;
+    height: 100%;
+    background: var(--clr);
+}
+
+.navigation
+{
+    position: absolute;
+    width: 70px;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.navigation ul 
+{
+    height: 100%;
+}
+
+.navigation ul li
+{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 100px;
+    z-index: 1;
+}
+
+.navigation ul li a
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    gap: 60px;
+    font-weight: 500;
+}
+
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+}
+
+.navigation ul li a .text
+{
+    position: absolute;
+    color: var(--clr);
+    font-weight: 500;
+    font-size: 0.95em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.navigation ul li.active a .text
+{
+    opacity: 1;
+    transform: translateX(80px);
+    color: var(--clr-text);
+}
+
+.indicator
+{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: var(--clr-indicator);
+    justify-content: center;
+    border-radius: 50%;
+    left: 10px;
+    top: 10px;
+    border: 0 solid var(--clr);
+    transition: 0.5s;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator
+{
+  transform: translateY(calc(100px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator
+{
+  transform: translateY(calc(100px * 1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator
+{
+  transform: translateY(calc(100px * 2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator
+{
+  transform: translateY(calc(100px * 3));
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator
+{
+  transform: translateY(calc(100px * 4));
+}
